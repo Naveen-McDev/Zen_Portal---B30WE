@@ -26,7 +26,7 @@ async function postData(){
         Pin_Code:document.getElementById("pin").value,
     }
     try{
-        var postdata=await fetch("https://62026e86b8735d00174cbaaa.mockapi.io/form",{
+        var postdata=await fetch("await fetch("https://62de2a29ccdf9f7ec2d2197a.mockapi.io/user",{
             method:"POST",
             body:JSON.stringify(formdata),
             headers:{
@@ -43,7 +43,7 @@ async function postData(){
 
 async function getdata(){
     try{
-        var datas=await fetch("https://62026e86b8735d00174cbaaa.mockapi.io/form");
+        var datas=await fetch("https://62de2a29ccdf9f7ec2d2197a.mockapi.io/user");
         var dat= await datas.json();
         console.log(dat);
         let tbody=document.getElementById("tbody");
@@ -89,7 +89,7 @@ async function getdata(){
              Edittd.appendChild(Edit_button)
             Edit_button.addEventListener("click",async function (){
                 try{
-                    var edata=await fetch("https://62026e86b8735d00174cbaaa.mockapi.io/form/"+rowid)
+                    var edata=await fetch("https://62de2a29ccdf9f7ec2d2197a.mockapi.io/user/"+rowid)
                     var editdata=await edata.json();
                     console.log(editdata);
                       currentid=editdata.id;
@@ -112,7 +112,7 @@ async function getdata(){
             Deletetd.appendChild(Delete_button);
             Delete_button.addEventListener("click",async function(){
                 try {
-                    var edata=await fetch("https://62026e86b8735d00174cbaaa.mockapi.io/form/"+rowid,{
+                    var edata=await fetch("https://62de2a29ccdf9f7ec2d2197a.mockapi.io/user/"+rowid,{
                         method:"DELETE"
                     })
                       alert("data deleted")
@@ -156,7 +156,7 @@ async function putData(){
     }
     getdata();
     try{
-        var putdata=await fetch("https://62026e86b8735d00174cbaaa.mockapi.io/form/"+currentid,{
+        var putdata=await fetch("https://62de2a29ccdf9f7ec2d2197a.mockapi.io/user/"+currentid,{
         method:"PUT",
         body:JSON.stringify(formdata),
         headers:{"Content-type":"application/json"}
